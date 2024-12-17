@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cardápio Digital</h1>
+    </header>
+    
+    <main>
+        <section id="menu">
+            <h2>Cardápio</h2>
+            
+            <div class="category">
+                <h3>Hambúrgueres</h3>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" class="menu-item" data-name="Cheeseburger" data-price="15">
+                        Cheeseburger - Pão, carne, queijo, alface e tomate. R$15,00
+                        <input type="number" class="item-quantity" min="1" value="1">
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" class="menu-item" data-name="Bacon Burger" data-price="18">
+                        Bacon Burger - Pão, carne, queijo, bacon e maionese. R$18,00
+                        <input type="number" class="item-quantity" min="1" value="1">
+                    </label>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>Tapiocas</h3>
+                <h4>Doces</h4>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" class="menu-item" data-name="Tapioca de Nutella" data-price="12">
+                        Tapioca de Nutella - Nutella e morango. R$12,00
+                        <input type="number" class="item-quantity" min="1" value="1">
+                    </label>
+                </div>
+                <h4>Salgadas</h4>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" class="menu-item" data-name="Tapioca de Frango" data-price="10">
+                        Tapioca de Frango - Frango desfiado e catupiry. R$10,00
+                        <input type="number" class="item-quantity" min="1" value="1">
+                    </label>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h3>Bebidas</h3>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" class="menu-item" data-name="Coca-Cola" data-price="5">
+                        Coca-Cola - 350ml. R$5,00
+                        <input type="number" class="item-quantity" min="1" value="1">
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="checkbox" class="menu-item" data-name="Suco de Laranja" data-price="7">
+                        Suco de Laranja - Natural, 300ml. R$7,00
+                        <input type="number" class="item-quantity" min="1" value="1">
+                    </label>
+                </div>
+
+               
+            </div>
+        </section>
+
+        <section id="cart">
+            <h2>Carrinho de Compras</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: R$<span id="total-price">0,00</span></p>
+            <button id="checkout-button" disabled>Finalizar Pedido</button>
+        </section>
+    </main>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Finalizar Pedido</h2>
+            <form id="checkout-form">
+                <label for="customer-name">Nome Completo:</label>
+                <input type="text" id="customer-name" required>
+
+                <label for="customer-address">Endereço de Entrega:</label>
+                <input type="text" id="customer-address" required>
+
+                <h3>Forma de Pagamento:</h3>
+                <label>
+                    <input type="radio" name="payment-method" value="cartao" required> Cartão (Débito ou Crédito)
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="pix"> Pix
+                </label>
+
+                <h3>Resumo do Pedido:</h3>
+                <ul id="order-summary"></ul>
+                <p>Total: R$<span id="summary-total-price">0,00</span></p>
+
+                <button type="submit">Confirmar Pedido</button>
+                <button type="button" id="cancel-order">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>Projeto Desenvolvido por Alexandre Soares</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
